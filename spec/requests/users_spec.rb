@@ -25,7 +25,7 @@ RSpec.describe 'Users', type: :request do
     it 'returns http success' do
       expect(response).to have_http_status(:success)
     end
-    
+
     it 'include placeholder User information and list of his posts' do
       expect(response.body).to include('User information and list of his posts')
     end
