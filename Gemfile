@@ -54,6 +54,9 @@ group :development, :test do
 
   # See https://hackernoon.com/how-to-write-your-first-tests-using-rspec-in-rails-applications-hhfk2bqs
   gem 'rspec-rails'
+
+  # See https://stackoverflow.com/questions/37222008/failure-error-expectresponse-to-render-template-index-nomethoderrorassert
+  gem 'rails-controller-testing'
 end
 
 group :development do
