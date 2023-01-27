@@ -82,3 +82,9 @@ gem 'dotenv-rails', '~> 2.8'
 
 # Use RuboCop to enforce Ruby style
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+# https://github.com/rails/tailwindcss-rails
+# bundle add tailwindcss-rails
+# bundle install
+# rails tailwindcss:install
+gem 'tailwindcss-rails'
