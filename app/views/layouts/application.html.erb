@@ -13,6 +13,10 @@
 
   <body>
     <main class="container mx-auto mt-28 px-5 flex flex-col">
+      <div class="flex justify-between" >
+        <%= link_to 'HOME', root_path %>
+        <%= link_to 'BACK', 'javascript:history.back()' %>
+      </div>
       <%= yield %>
     </main>
   </body>
