@@ -1,3 +1,21 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
 <p>A complete Post with all Comments</p>
+
+# show post
+<div>
+  <p>
+    <span><%= @post.author.name %>:</span>
+    <span><%= @post.text %></span>
+  </p>
+</div>
+
+# show comments
+<div class="post-comments mt-4 border-2 border-gray-500">
+  <% @post.comments.each do |comment| %>
+    <div class="post-comment">
+      <p>
+        <span><%= comment.author.name %>:</span>
+        <span><%= comment.text %></span>
+      </p>
+    </div>
+  <% end %>
+<div>
