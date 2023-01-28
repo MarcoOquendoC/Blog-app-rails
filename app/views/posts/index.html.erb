@@ -1,3 +1,23 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
 <p>List of Posts for a given User</p>
+<%= render "users/user", user: @user %>
+
+<% @user.posts.each do | post | %>
+  <%= link_to user_post_path(@user, post) do %>
+    <%= render "post", post: post %>
+
+    <div class="">
+      <h3 class="">
+        <span>Comments</span>
+      </h3>
+
+      <% post.recent_comments.each do |comment| %>
+        <div class="post-comment">
+          <p>
+            <span><strong><%= comment.author.name %>:</strong></span>
+            <span><%= comment.text %></span>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
