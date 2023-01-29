@@ -1,14 +1,7 @@
 <p>A complete Post with all Comments</p>
 
-# show post
-<div>
-  <p>
-    <span><%= @post.author.name %>:</span>
-    <span><%= @post.text %></span>
-  </p>
-</div>
-
-# show comments
+<%= render "post", post: @post %>
+<%= render "likes/like" %>
 <div class="post-comments mt-4 border-2 border-gray-500">
   <% @post.comments.each do |comment| %>
     <div class="post-comment">
@@ -18,4 +11,9 @@
       </p>
     </div>
   <% end %>
+  <div>
+    <br>
+    <h2>Add new comment</h2>
+    <%= render "comments/comment" %>
+  </div>
 <div>
