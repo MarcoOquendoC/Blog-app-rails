@@ -1,0 +1,19 @@
+<main>
+  <%= notice %>
+  <div id="new-post">
+    <h1>New Post</h1>
+
+    <%= form_with model: post, url: user_posts_path(@user.id, @post.id), method: :post, local: true do |form| %>
+      <div class="input">
+        <%= form.label :title, "Caption/Title"%>
+        <%= form.text_field :title %>
+      </div>
+
+      <div class="input">
+        <%= form.label :text %>
+        <%= form.text_field :text, id: "text-input"%>
+      </div>
+      <%= form.submit "Create"%>
+    <% end %>
+  </div>
+</main>
