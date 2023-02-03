@@ -2,15 +2,26 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
   describe 'GET /index' do
-    subject { get '/users' }
-    before { subject }
+    subject do
+      first_user = User.create(name: 'Tom', photo: '', bio: 'Teacher from Mexico.', posts_counter: 0)
+
+      Post.create(author: first_user, title: 'Title 1', text: 'post text 2', comments_counter: 0, likes_counter: 0)
+      Post.create(author: first_user, title: 'Title 2', text: 'post text 3', comments_counter: 0, likes_counter: 0)
+      Post.create(author: first_user, title: 'Title 3', text: 'post text 4', comments_counter: 0, likes_counter: 0)
+      get "/users"
+    end
+
+    before do
+      subject
+    end
+
 
     it 'returns http success' do
       expect(response).to have_http_status(:success)
     end
 
-    it 'include placeholder List of Users' do
-      expect(response.body).to include('List of Users')
+    it 'include correct number of posts' do
+      expect(response.body).to include('Number of posts: 3')
     end
 
     it 'should render index' do
@@ -43,8 +54,8 @@ RSpec.describe 'Users', type: :request do
       expect(response).to have_http_status(:success)
     end
 
-    it 'include placeholder User information and list of his posts' do
-      expect(response.body).to include('See all posts')
+    it 'include See All Posts button' do
+      expect(response.body).to include('See All Posts')
     end
 
     it 'should render show' do
