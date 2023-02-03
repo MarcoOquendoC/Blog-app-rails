@@ -8,13 +8,12 @@ RSpec.describe 'Users', type: :request do
       Post.create(author: first_user, title: 'Title 1', text: 'post text 2', comments_counter: 0, likes_counter: 0)
       Post.create(author: first_user, title: 'Title 2', text: 'post text 3', comments_counter: 0, likes_counter: 0)
       Post.create(author: first_user, title: 'Title 3', text: 'post text 4', comments_counter: 0, likes_counter: 0)
-      get "/users"
+      get '/users'
     end
 
     before do
       subject
     end
-
 
     it 'returns http success' do
       expect(response).to have_http_status(:success)
