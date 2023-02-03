@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'User index page', type: :feature do
+RSpec.describe 'User show page', type: :feature do
   describe 'User show page process' do
     before(:each) do
       @user = User.create(name: 'mila', photo: 'https://i.imgur.com/1JZ1Q2r.jpg', bio: 'I am a biology teacher',
