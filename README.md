@@ -147,6 +147,12 @@ To run tests, run the following command:
 - Twitter: [@marcooquendoc](https://twitter.com/marcooquendoc). 
 - LinkedIn: [Marco Vinicio Oquendo](https://www.linkedin.com/in/MarcoOquendoC/). 
 
+👤 **Miliyon Ayalew**
+
+- GitHub: [@Miliyonayalew](https://github.com/Miliyonayalew/)
+- Twitter: [@Miliyonayalew](https://twitter.com/MilaAyalew)
+- LinkedIn: [Miliyonayalew](https://www.linkedin.com/in/miliyon-ayalew/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
