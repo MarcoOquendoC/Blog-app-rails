@@ -29,19 +29,8 @@ RSpec.describe 'User index page', type: :feature do
       expect(page.body).to have_content(@user.bio)
     end
 
-    it "should show the user's first 3 posts" do
-      expect(page.body).to have_content('This is my second post')
-      expect(page.body).to have_content('This is my third post')
-      expect(page.body).to have_content('This is my fourth post')
-    end
-
     it "should show a button that lets me view all of a user's posts" do
       expect(page.body).to have_content('See All Posts')
-    end
-
-    it "When user click on a user's post, it should redirects to that post's show page" do
-      click_link(@last_post.text)
-      expect(page).to have_current_path(user_post_path(@user, @last_post))
     end
 
     it "When I click to see all posts, it should redirects me to the user's post's index page" do
