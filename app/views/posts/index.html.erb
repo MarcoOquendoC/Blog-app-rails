@@ -14,7 +14,7 @@
   <% end %>
 </div>
 
-<% @user.posts.each do | post | %>
+<% @user.posts_list.each do | post | %>
 
   <%= link_to user_post_path(@user, post), class:"border-2 border-sky-50 mb-1 mt-2" do %>
     <%= render "post", post: post %>
