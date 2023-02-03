@@ -13,6 +13,10 @@ class Post < ApplicationRecord
     comments.order(created_at: :desc).limit(5)
   end
 
+  def comments_list
+    comments.order(created_at: :desc)
+  end
+
   private
 
   def update_posts_counter
