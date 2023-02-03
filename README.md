@@ -67,6 +67,9 @@
 > Describe between 1-3 key features of the application.
 - **[Process data in models]**
 - **[Controllers specs]**
+- **[Add Post]**
+- **[Register User]**
+- **[Like Post]**
 - **[Add API endpoints]**
 
 <!-- LIVE DEMO -->
@@ -160,6 +163,7 @@ To run tests, run the following command:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **[Deploy]**
+- [ ] **[Add search]**
 - [ ] **[improve user interfase]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
