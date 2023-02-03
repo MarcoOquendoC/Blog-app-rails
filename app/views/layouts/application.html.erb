@@ -12,12 +12,14 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex flex-col">
-      <div class="flex justify-between" >
-        <%= link_to 'HOME', root_path %>
-        <%= link_to 'BACK', 'javascript:history.back()' %>
-      </div>
+
+    <header class="bg-white space-y-4 p-4 sm:px-8 sm:py-6 lg:p-4 xl:px-8 xl:py-6">
+      <%= render 'static/header' %>
+    </header>
+
+    <main class="container mt-2 mx-auto px-5 flex flex-col">
       <%= yield %>
     </main>
+
   </body>
 </html>

@@ -1,8 +1,7 @@
-<% content_for :title, "Blog App" %>
-<p>List of Users</p>
-
 <section>
-  <% @users.each do |user| %>
-    <%= render "user", user: user %>
-  <% end %>
+  <ul>
+    <% @users.each do |user| %>
+      <%= render "user", user: user %>
+    <% end %>
+  </ul>
 </section>
