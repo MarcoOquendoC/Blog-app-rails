@@ -9,24 +9,26 @@ class PostsController < ApplicationController
   end
 
   def new
-    post = Post.new
-    respond_to do |format|
-      format.html { render :new, locals: { post: } }
-    end
+    @post = Post.new
   end
 
   def create
-    post = Post.new(params.require(:post).permit(:title, :text))
-    post.author = current_user
-    respond_to do |format|
-      format.html do
-        if post.save
-          redirect_to user_posts_path(current_user.id), notice: 'Post successfully created'
-        else
-          flash[:notice] = "Error: Couldn't create post"
-          render :new, locals: { post: }
-        end
-      end
+    @post = Post.new(post_params)
+    @post.author_id = current_user.id
+    @post.comments_counter = 0
+    @post.likes_counter = 0
+
+    if @post.save
+      redirect_to user_posts_path, notice: 'Post successfully created'
+    else
+      flash[:notice] = "Error: Couldn't create post"
+      render :new
     end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :text)
   end
 end
