@@ -1,21 +1,16 @@
-<p>A complete Post with all Comments</p>
+<%# Post %>
+<%= render "post", post: @post %>
 
-# show post
-<div>
-  <p>
-    <span><%= @post.author.name %>:</span>
-    <span><%= @post.text %></span>
-  </p>
-</div>
+<div class="pr-2 pl-2 pt-1 mt-4 border-2 border-gray-500">
+  <%# Comments form %>
+  <%= render "comments/comment" %>
 
-# show comments
-<div class="post-comments mt-4 border-2 border-gray-500">
-  <% @post.comments.each do |comment| %>
-    <div class="post-comment">
-      <p>
-        <span><%= comment.author.name %>:</span>
-        <span><%= comment.text %></span>
-      </p>
-    </div>
+  <%# List of comments %>
+  <% @post.comments_list.each do |comment| %>
+    <p class="pl-2">
+      <span><strong><%= comment.author.name %>:</strong></span>
+      <span><%= comment.text %></span>
+    </p>
   <% end %>
+  <br>
 <div>

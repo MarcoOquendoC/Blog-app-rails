@@ -1,0 +1,8 @@
+<%= form_with model: Comment, url: user_post_comments_path(@user.id, @post.id), method: :post, local: true do |f| %>
+  <div class="flex gap-1 justify-between">
+    <%= f.text_field :text, placeholder: "Write a comment...", class:"w-[100%]" %>
+    <div class="flex gap-1">
+      <%= f.submit "Send", class:"w-24 py-2.5 bg-sky-600 text-white font-medium text-xs rounded shadow-md hover:bg-sky-700 hover:shadow-lg focus:bg-sky-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-800 active:shadow-lg transition duration-150 ease-in-out" %>
+    </div>
+  </div>
+<% end %>

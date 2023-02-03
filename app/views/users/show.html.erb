@@ -1,21 +1,29 @@
-<section class="flex flex-col w-[55%]">
+<section class="flex flex-col">
   <%= render "user", user: @user %>
-  <div class="bio border-2 border-blue-gray">
-    <h3>Bio<h3>
+  <div class="p-2 border-2 border-sky-500 bg-slate-100">
+    <h3 class="font-semibold text-slate-900 text-lg">Bio<h3>
     <p><%= @user.bio %></p>
   </div>
-  <br>
-  <br>
-  <p>Recent posts</p>
-  <% @user.recent_posts.each do |post| %>
-    <%= link_to user_post_path(@user, post) do %>
-      <%= render "posts/post", post: post %>
+
+  <div class="flex gap-2 mt-2">
+    <%= link_to new_user_post_path(@user.id) do %>
+      <button type="button" class="inline-block px-6 py-2.5 bg-sky-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-sky-700 hover:shadow-lg focus:bg-sky-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-500 active:shadow-lg transition duration-150 ease-in-out">
+        New Post
+      </button>
     <% end %>
-  <% end %>
-  
-  <%= link_to user_posts_path(@user), class: 'self-center' do %>
-    <button type="button" class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out">
-      See all posts
-    </button>
-  <% end %>
+
+    <%= link_to user_posts_path(@user), class: 'self-center' do %>
+      <button type="button" class="inline-block px-6 py-2.5 bg-sky-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-sky-700 hover:shadow-lg focus:bg-sky-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-500 active:shadow-lg transition duration-150 ease-in-out">
+        See All Posts
+      </button>
+    <% end %>
+  </div>
+
+  <div class="mt-2">
+    <% @user.recent_posts.each do |post| %>
+      <%= link_to user_post_path(@user, post) do %>
+        <%= render "posts/post", post: post %>
+      <% end %>
+    <% end %>
+  </div>
 </section>

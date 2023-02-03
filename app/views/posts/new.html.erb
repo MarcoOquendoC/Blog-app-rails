@@ -1,0 +1,21 @@
+<section>
+  <div>
+    <h1>New Post</h1><br>
+    <%= form_with model: @post, url: user_posts_path do |form| %>
+      <div class="p-2 mb-4 flex flex-col items-start gap-1 dark:bg-slate-800 bg-slate-100 justify-around">
+        <div class="flex flex-col w-[100%]">
+          <%= form.label :title, "Caption/Title"%>
+          <%= form.text_field :title %>
+        </div>
+        <div class="flex flex-col w-[100%]">
+          <%= form.label :text %>
+          <%= form.text_area :text %>
+        </div>
+      </div>
+
+      <%# Submit button %>
+      <%= form.submit "Create", class: "ml-2 inline-block px-6 py-2.5 bg-sky-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-sky-700 hover:shadow-lg focus:bg-sky-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-500 active:shadow-lg transition duration-150 ease-in-out" %>
+
+    <% end %>
+  </div>
+</section>

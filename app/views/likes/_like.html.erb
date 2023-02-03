@@ -1,0 +1,5 @@
+<button class="h-[1.5rem] bg-sky-600 text-white font-medium text-xs rounded shadow-md hover:bg-sky-700 hover:shadow-lg focus:bg-sky-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-800 active:shadow-lg transition duration-150 ease-in-out">
+  <%= form_with model: Like, url: user_post_likes_path(@user.id, post), method: :post, local: true do |f| %>
+    <%= f.submit " ♥ "%>
+  <% end %>
+</button>

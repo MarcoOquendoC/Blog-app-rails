@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'Posts', type: :request do
-  describe 'GET /index' do
+RSpec.describe 'Requests Posts', type: :request do
+  describe 'GET index' do
     subject do
       first_user = User.create(name: 'Tom', photo: '', bio: 'Teacher from Mexico.', posts_counter: 0)
       second_user = User.create(name: 'Lilly', photo: '', bio: 'Teacher from Poland.', posts_counter: 0)
@@ -26,8 +26,8 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to have_http_status(:success)
     end
 
-    it 'include placeholder List of Posts for a given User' do
-      expect(response.body).to include('List of Posts for a given User')
+    it 'include New Post button' do
+      expect(response.body).to include('New Post')
     end
 
     it 'should render index' do
@@ -62,8 +62,8 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to have_http_status(:success)
     end
 
-    it 'include placeholder A complete Post with all Comments' do
-      expect(response.body).to include('A complete Post with all Comments')
+    it 'include Send button to add comment' do
+      expect(response.body).to include('Send')
     end
 
     it 'should render index' do

@@ -1,23 +1,29 @@
-<p>List of Posts for a given User</p>
 <%= render "users/user", user: @user %>
 
-<% @user.posts.each do | post | %>
-  <%= link_to user_post_path(@user, post) do %>
-    <%= render "post", post: post %>
-
-    <div class="">
-      <h3 class="">
-        <span>Comments</span>
-      </h3>
-
-      <% post.recent_comments.each do |comment| %>
-        <div class="post-comment">
-          <p>
-            <span><strong><%= comment.author.name %>:</strong></span>
-            <span><%= comment.text %></span>
-          </p>
-        </div>
-      <% end %>
-    </div>
+<div class="flex gap-2">
+  <%= link_to new_user_post_path(@user) do %>
+    <button type="button" class="inline-block px-6 py-2.5 bg-sky-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-sky-700 hover:shadow-lg focus:bg-sky-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-500 active:shadow-lg transition duration-150 ease-in-out">
+      New Post
+    </button>
   <% end %>
+
+  <%= link_to user_path(@user), class: 'self-center' do %>
+    <button type="button" class="inline-block px-6 py-2.5 bg-sky-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-sky-700 hover:shadow-lg focus:bg-sky-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-500 active:shadow-lg transition duration-150 ease-in-out">
+      Back to User
+    </button>
+  <% end %>
+</div>
+
+<% @user.posts.each do | post | %>
+
+  <%= link_to user_post_path(@user, post), class:"border-2 border-sky-50 mb-1 mt-2" do %>
+    <%= render "post", post: post %>
+    <% post.recent_comments.each do |comment| %>
+      <p class="pl-2">
+        <span><strong><%= comment.author.name %>:</strong></span>
+        <span><%= comment.text %></span>
+      </p>
+    <% end %>
+  <% end %>
+
 <% end %>
