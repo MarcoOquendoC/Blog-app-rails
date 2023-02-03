@@ -14,11 +14,11 @@
   <% end %>
 </div>
 
-<% @user.posts_list.each do | post | %>
+<% @posts.each do | post | %>
 
   <%= link_to user_post_path(@user, post), class:"border-2 border-sky-50 mb-1 mt-2" do %>
     <%= render "post", post: post %>
-    <% post.recent_comments.each do |comment| %>
+    <% post.comments_list.each do |comment| %>
       <p class="pl-2">
         <span><strong><%= comment.author.name %>:</strong></span>
         <span><%= comment.text %></span>
