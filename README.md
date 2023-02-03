@@ -153,10 +153,8 @@ To run tests, run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
 - [ ] **[Deploy]**
 - [ ] **[improve user interfase]**
-- [ ] **[Improve styling]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
