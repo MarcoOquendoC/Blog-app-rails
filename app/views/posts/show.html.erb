@@ -6,7 +6,7 @@
   <%= render "comments/comment" %>
 
   <%# List of comments %>
-  <% @post.comments_list.each do |comment| %>
+  <% @comments.each do |comment| %>
     <p class="pl-2">
       <span><strong><%= comment.author.name %>:</strong></span>
       <span><%= comment.text %></span>

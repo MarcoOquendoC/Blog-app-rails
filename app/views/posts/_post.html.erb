@@ -1,5 +1,5 @@
 <div class="border-2 border-sky-100 mb-2 pl-2" >
-    <h3 class="font-semibold text-slate-900 text-lg"><%= post.title %></h3>
+    <h3 class="font-semibold text-slate-900 text-lg"><%= post.title %> by <%= post.author.name%></h3>
   <p><%= post.text %></p>
   <aside class="text-right mr-2">
     <span>Comments: <%= post.comments_counter %></span>
