@@ -68,6 +68,9 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  # Use MailCatcher to catch emails [https://mailcatcher.me/]
+  gem 'letter_opener'
 end
 
 group :test do
@@ -88,3 +91,6 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 # bundle install
 # rails tailwindcss:install
 gem 'tailwindcss-rails'
+
+# devise
+gem 'devise'
