@@ -16,10 +16,10 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }, format: { with: /\A[a-zA-Z0-9]+\z/ }
   # validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  attr_accessor :login
+  attr_writer :login
 
   def login
-    @login || self.name || self.email
+    @login || name || email
   end
 
   def recent_posts
@@ -30,13 +30,11 @@ class User < ApplicationRecord
     posts.order(created_at: :desc)
   end
 
-  private
-
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
-    if login = conditions.delete(:login)
-      where(conditions.to_h).where(["name = :value OR lower(email) = lower(:value)", { value: login }]).first
-    elsif conditions.has_key?(:name) || conditions.has_key?(:email)
+    if (login = conditions.delete(:login))
+      where(conditions.to_h).where(['name = :value OR lower(email) = lower(:value)', { value: login }]).first
+    elsif conditions.key?(:name) || conditions.key?(:email)
       where(conditions.to_h).first
     end
   end
