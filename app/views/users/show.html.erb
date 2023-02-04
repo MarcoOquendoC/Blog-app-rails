@@ -1,4 +1,7 @@
-<section class="flex flex-col">
+<header class="bg-white space-y-4 p-4 sm:px-8 sm:py-6 lg:p-4 xl:px-8 xl:py-6">
+  <%= render 'static/header' %>
+</header>
+<main class="container mt-2 mx-auto px-5 flex flex-col">
   <%= render "user", user: @user %>
   <div class="p-2 border-2 border-sky-500 bg-slate-100">
     <h3 class="font-semibold text-slate-900 text-lg">Bio<h3>
@@ -26,4 +29,4 @@
       <% end %>
     <% end %>
   </div>
-</section>
+</main>
