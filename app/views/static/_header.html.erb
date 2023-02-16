@@ -4,8 +4,10 @@
     <%= link_to 'Users', root_path %>
   </span>
 
-  <span class="inline-block px-6 py-2.5 bg-sky-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-sky-700 hover:shadow-lg focus:bg-sky-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-500 active:shadow-lg transition duration-150 ease-in-out">
-    <%= link_to 'BACK', 'javascript:history.back()' %>
-  </span>
-
+  <div class="flex items-center justify-center gap-2">
+    <span class="inline-block px-6 py-2.5 bg-sky-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-sky-700 hover:shadow-lg focus:bg-sky-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-500 active:shadow-lg transition duration-150 ease-in-out">
+      <%= link_to 'BACK', 'javascript:history.back()' %>
+    </span>
+    <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "inline-block px-6 py-2.5 bg-sky-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-sky-700 hover:shadow-lg focus:bg-sky-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-500 active:shadow-lg transition duration-150 ease-in-out", data: { turbo: false } %>
+  </div>
 </nav>
