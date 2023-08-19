@@ -102,20 +102,37 @@ In order to run this project you need:
 
 ### Setup
 
-Clone this repository to your desired folder:
+Using the terminal clone this repository to your desired folder (my-folder) and open it with VSCode:
 
 ```sh
   cd my-folder
-  git clone git@github.com:MarcoOquendoC/Blog-app-rails.git
+  git clone https://github.com/MarcoOquendoC/Blog-app-rails.git
+  cd Blog-app-rails
+  code .
 ```
 
 ### Install
 
-Install this project with:
+First we need to configure the database, (we used dotenv-rails gem).
+create a file called `.env` in the root with the following content:
+Note: Change the right side of = in each line to match your correct postgresql password and username. The content should look like this:
 
 ```sh
-  cd Blog-app-rails
+  PG_HOST = 5432
+  PG_USERNAME = postgres
+  PG_PASSWORD = yourpassword
+  PG_DB_DEV = blog-development
+  PG_DB_TEST = blog-test
+```
+
+Using the console install this project with:
+
+```sh
   bundle install
+  rails db:create
+  rails db:migrate
+  rails db:seed
+  rails tailwindcss:build
 ```
 
 
@@ -124,7 +141,7 @@ Install this project with:
 To run the project, execute the following command:
 
 ```sh
-  rails server
+  rails s
 ```
 
 ### Run tests
